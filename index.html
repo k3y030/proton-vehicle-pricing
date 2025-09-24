@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proton Sales - Didi Motors Sdn Bhd</title>
+    <title>Proton Catalog Sales</title>
     <style>
         * {
             margin: 0;
@@ -106,6 +106,39 @@
 
  .vehicle-headerx50 {
     background: url("x50-mainbg.jpg") no-repeat center center;
+    background-size: cover; /* supaya gambar penuh ikut kotak */
+    color: white; /* biar text kekal putih */
+    padding: 95px;
+    display: flex;
+    align-items: center;
+    gap: 95px;
+    border-radius: 10px 10px 0 0; /* kalau nak rounded atas je */
+}
+
+ .vehicle-headerx70 {
+    background: url("x70-mainbg.jpg") no-repeat center center;
+    background-size: cover; /* supaya gambar penuh ikut kotak */
+    color: white; /* biar text kekal putih */
+    padding: 95px;
+    display: flex;
+    align-items: center;
+    gap: 95px;
+    border-radius: 10px 10px 0 0; /* kalau nak rounded atas je */
+}
+
+.vehicle-headerx90 {
+    background: url("x90-mainbg.jpg") no-repeat center center;
+    background-size: cover; /* supaya gambar penuh ikut kotak */
+    color: white; /* biar text kekal putih */
+    padding: 95px;
+    display: flex;
+    align-items: center;
+    gap: 95px;
+    border-radius: 10px 10px 0 0; /* kalau nak rounded atas je */
+}
+
+.vehicle-headers70 {
+    background: url("s70-mainbg.jpg") no-repeat center center;
     background-size: cover; /* supaya gambar penuh ikut kotak */
     color: white; /* biar text kekal putih */
     padding: 95px;
@@ -342,21 +375,161 @@
     text-shadow: 1px 1px 2px rgba(255,255,255,0.5); /* bayang putih ringan */
 }
 
+.consultant {
+    text-align: right;
+    line-height: 1.2; /* jarak rapat sikit */
+}
+
+.consultant-name {
+    font-weight: bold;
+    font-size: 16px; /* nama lebih besar */
+}
+
+.consultant-role {
+    font-size: 14px;
+    color: #555; /* boleh tukar ikut tema */
+}
+
+.testimoni-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.testimoni-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.testimoni-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 gambar sejajar */
+  gap: 15px; /* jarak antara gambar */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimoni-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;   /* isi kotak tanpa herot */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Untuk background header kereta - kurangkan padding & gap bila skrin kecil */
+@media (max-width: 768px) {
+  .vehicle-headerSaga,
+  .vehicle-headerPersona,
+  .vehicle-headerIriz,
+  .vehicle-headerx50,
+  .vehicle-headerx70,
+  .vehicle-headerx90,
+  .vehicle-headers70 {
+    flex-direction: column;   /* susun menegak */
+    text-align: center;
+    padding: 40px;           /* kecilkan padding */
+    gap: 20px;               /* jarak kecil */
+  }
+
+  /* Table biar boleh scroll bila phone */
+  .pricing-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Testimoni grid kecil */
+  .testimoni-grid {
+    grid-template-columns: repeat(2, 1fr); /* phone: 2 gambar je satu row */
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-headerSaga,
+  .vehicle-headerPersona,
+  .vehicle-headerIriz,
+  .vehicle-headerx50,
+  .vehicle-headerx70,
+  .vehicle-headerx90,
+  .vehicle-headers70 {
+    padding: 20px;  /* lebih kecil untuk skrin kecik */
+    gap: 10px;
+  }
+
+  .testimoni-grid {
+    grid-template-columns: 1fr; /* phone kecik: 1 gambar satu row */
+  }
+
+  .proton-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 10px;
+  }
+
+  .company-title {
+    font-size: 20px;
+  }
+
+  .consultant-name {
+    font-size: 14px;
+  }
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;   /* stack atas-bawah */
+    text-align: center;       /* center semua text */
+  }
+
+  .logo-section {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .consultant {
+    text-align: center;  /* ubah dari right → center */
+  }
+}
+
+@media (max-width: 480px) {
+  .company-title {
+    font-size: 22px; /* kecil sikit untuk phone */
+  }
+
+  .company-subtitle {
+    font-size: 14px;
+  }
+
+  .consultant-name {
+    font-size: 14px;
+  }
+
+  .consultant-role {
+    font-size: 12px;
+  }
+}
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="logo-section">
-                <img src="proton.png" alt="Proton Logo" class="proton-logo">
-                <div>
-                    <div class="company-title">PROTON SALES</div>
-                    <div class="company-subtitle">DIDI MOTORS SDN BHD</div>
-                </div>
+   <div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="logo-section">
+            <img src="proton.png" alt="Proton Logo" class="proton-logo">
+            <div>
+                <div class="company-title">PROTON SALES</div>
             </div>
         </div>
+        <!-- Text on the right -->
+        <div class="consultant">
+            <div class="consultant-name">KHAIRUL RIJAL ISHAM</div>
+            <div class="consultant-role">CAR SALES CONSULTANT</div>
+        </div>
+    </div>
 
         <!-- SAGA -->
         <div class="vehicle-section">
@@ -586,75 +759,282 @@
             </table>	
         </div>
 		
-     <!-- Footer Information -->
-<div class="footer-info">
-    <div class="footer-content">
-
-        <!-- Section 1: Kelayakan -->
-<div class="footer-section">
-  <h3>SILA SEMAK KELAYAKAN ANDA</h3>
-  <ul class="kelayakan-list">
-    <li>KERAJAAN</li>
-    <li>SWASTA</li>
-    <li>KILANG</li>
-  </ul>
-  <ul class="kelayakan-list">
-    <li>PENCEN</li>
-    <li>PELAJAR</li>
-    <li>SKIM GRADUAN</li>
-  </ul>
-</div>
-
-
-        <!-- Section 2: Dokumen Diperlukan -->
-        <div class="footer-section">
-            <h3>DOKUMEN DIPERLUKAN</h3>
-            <div class="doc-row">
-                <div class="doc-category">
-                    <h4>KERAJAAN</h4>
-                    <ul>
-                        <li>IC & LESEN</li>
-                        <li>3 BULAN PAYSLIP</li>
-                        <li>3 BULAN BANK STATEMENT</li>
-                    </ul>
-                </div>
-
-                <div class="doc-category">
-                    <h4>SWASTA</h4>
-                    <ul>
-                        <li>IC & LESEN</li>
-                        <li>6 BULAN PAYSLIP</li>
-                        <li>6 BULAN BANK STATEMENT</li>
-                    </ul>
-                </div>
-
-                <div class="doc-category">
-                    <h4>PERNIAGAAN</h4>
-                    <ul>
-                        <li>SSM</li>
-                        <li>6 BULAN BANK STATEMENT</li>
-                    </ul>
+		<!-- X-70 -->
+        <div class="vehicle-section">
+            <div class="vehicle-headerx70">
+                <div class="vehicle-info">
+                    <h2>X-70</h2>
+                    <p>Intelligence Inspires</p>
                 </div>
             </div>
+            <table class="pricing-table">
+                <thead class="table-header">
+                    <tr>
+					    <th>VARIANT</th>
+                        <th>PRICE<br>(OTR)</th>
+                        <th>INSURANCE<br>ESTIMATE</th>
+                        <th>LOAN<br>90%</th>
+                        <th>D/PAYMENT<br>10%</th>
+                        <th>7 YEARS</th>
+                        <th>9 YEARS</th>
+                        <th>FULL<br>LOAN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-row">
+                        <td class="variant-cell">STD 2WD 1.5 TGDI</td>
+                        <td class="price-cell">RM 101,850.24</td>
+                        <td>RM 3,050.24</td>
+                        <td>RM 91,600.00</td>
+                        <td>RM 10,250.24</td>
+                        <td>RM 1,281.31</td>
+                        <td>RM 1,038.98</td>
+						<td>RM 1,154.00</td>
+ 
+                    </tr>
+                    <tr class="table-row">
+                        <td class="variant-cell">EXEC 2WD 1.5 TGDI</td>
+                        <td class="price-cell">RM 114,147.89</td>
+                        <td>RM 3,347.89</td>
+                        <td>RM 102,700.00</td>
+                        <td>RM 11,447.89</td>
+                        <td>RM 1,436.58</td>
+                        <td>RM 1,164.88</td>
+						<td>RM 1,294.00</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="variant-cell">PREM 2WD 1.5 TGDI</td>
+                        <td class="price-cell">RM 127,470.34</td>
+                        <td>RM 3,670.34</td>
+                        <td>RM 114,700.00</td>
+                        <td>RM 12,770.34</td>
+                        <td>RM 1,604.00</td>
+                        <td>RM 1,301.00</td>
+						<td>RM 1,445.00</td>
+                    </tr>
+					 <tr class="table-row">
+                        <td class="variant-cell">PREM X 2WD 1.5 TGDI</td>
+                        <td class="price-cell">RM 130,592.61</td>
+                        <td>RM 3,792.61</td>
+                        <td>RM 117,500.00</td>
+                        <td>RM 13,092.61</td>
+                        <td>RM 1,644.00</td>
+                        <td>RM 1,333.00</td>
+						<td>RM 1,480.00</td>
+                    </tr>
+                </tbody>
+            </table>	
         </div>
-    </div> <!-- tutup .footer-content -->
+		
+		<!-- X-90 -->
+        <div class="vehicle-section">
+            <div class="vehicle-headerx90">
+                <div class="vehicle-info">
+                    <h2>X-90</h2>
+                    <p>Intelligence Empowers</p>
+                </div>
+            </div>
+            <table class="pricing-table">
+                <thead class="table-header">
+                    <tr>
+					    <th>VARIANT</th>
+                        <th>PRICE<br>(OTR)</th>
+                        <th>INSURANCE<br>ESTIMATE</th>
+                        <th>LOAN<br>90%</th>
+                        <th>D/PAYMENT<br>10%</th>
+                        <th>7 YEARS</th>
+                        <th>9 YEARS</th>
+                        <th>FULL<br>LOAN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-row">
+                        <td class="variant-cell">STD 1.5 (TGDI)</td>
+                        <td class="price-cell">RM 127,708.84</td>
+                        <td>RM 3,908.84</td>
+                        <td>RM 114,900.00</td>
+                        <td>RM 12,808.84</td>
+                        <td>RM 1,607.23</td>
+                        <td>RM 1,303.26</td>
+						<td>RM 1,445.00</td>
+ 
+                    </tr>
+                    <tr class="table-row">
+                        <td class="variant-cell">EXEC 1.5 (TGDI)</td>
+                        <td class="price-cell">RM 134,882.47</td>
+                        <td>RM 4,082.47</td>
+                        <td>RM 121,300.00</td>
+                        <td>RM 13,582.47</td>
+                        <td>RM 1,696.76</td>
+                        <td>RM 1,375.86</td>
+						<td>RM 1,526.00</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="variant-cell">PREM 1.5 (TGDI)</td>
+                        <td class="price-cell">RM 149,229.72</td>
+                        <td>RM 4,429.72</td>
+                        <td>RM 134,300.00</td>
+                        <td>RM 14,929.72</td>
+                        <td>RM 1,878.60</td>
+                        <td>RM 1,523.31</td>
+						<td>RM 1,690.00</td>
+                    </tr>
+					 <tr class="table-row">
+                        <td class="variant-cell">FLAGSHIP 1.5 (TGDI)</td>
+                        <td class="price-cell">RM 157,428.15</td>
+                        <td>RM 4,629.15</td>
+                        <td>RM 141,600.00</td>
+                        <td>RM 15,828.15</td>
+                        <td>RM 1,980.71</td>
+                        <td>RM 1,606.11</td>
+						<td>RM 1,783.00</td>
+                    </tr>
+                </tbody>
+            </table>	
+        </div>
+		
+		<!-- S-70 -->
+        <div class="vehicle-section">
+            <div class="vehicle-headers70">
+                <div class="vehicle-info">
+                    <h2>S70</h2>
+                    <p>Intelligence Evolves</p>
+                </div>
+            </div>
+            <table class="pricing-table">
+                <thead class="table-header">
+                    <tr>
+					    <th>VARIANT</th>
+                        <th>PRICE<br>(OTR)</th>
+                        <th>INSURANCE<br>ESTIMATE</th>
+                        <th>LOAN<br>90%</th>
+                        <th>D/PAYMENT<br>10%</th>
+                        <th>7 YEARS</th>
+                        <th>9 YEARS</th>
+                        <th>FULL<br>LOAN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-row">
+                        <td class="variant-cell">EXEC 1.5 (T)</td>
+                        <td class="price-cell">RM 76,145.71</td>
+                        <td>RM 2,345.71</td>
+                        <td>RM 68,500.00</td>
+                        <td>RM 7,645.71</td>
+                        <td>RM 958.18</td>
+                        <td>RM 776.97</td>
+						<td>RM 863.17</td>
+ 
+                    </tr>
+                    <tr class="table-row">
+                        <td class="variant-cell">PREM 1.5 (T)</td>
+                        <td class="price-cell">RM 82,331.07</td>
+                        <td>RM 2,511.07</td>
+                        <td>RM 74,000.00</td>
+                        <td>RM 8,311.07</td>
+                        <td>RM 1,035.12</td>
+                        <td>RM 839.35</td>
+						<td>RM 933.50</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="variant-cell">FLAGSHIP 1.5 (T)</td>
+                        <td class="price-cell">RM 92,586.67</td>
+                        <td>RM 2,786.67</td>
+                        <td>RM 83,300.00</td>
+                        <td>RM 9,286.67</td>
+                        <td>RM 1,165.21</td>
+                        <td>RM 944.84</td>
+						<td>RM 1,049.00</td>
+                    </tr>
+					 <tr class="table-row">
+                        <td class="variant-cell">FLAGSHIPX 1.5 (T)</td>
+                        <td class="price-cell">RM 97,724.27</td>
+                        <td>RM 2,924.47</td>
+                        <td>RM 87,900.00</td>
+                        <td>RM 9,824.27</td>
+                        <td>RM 1,229.55</td>
+                        <td>RM 977.01</td>
+						<td>RM 1,108.17</td>
+                    </tr>
+                </tbody>
+            </table>	
+        </div>
+				
+   <!-- Footer Information -->
+<div class="footer-info" style="max-width:1200px;margin:auto;padding:20px;box-sizing:border-box;font-family:Arial,sans-serif;">
+
+  <div class="footer-content" style="display:flex;flex-direction:column;gap:20px;">
+
+    <!-- Section 1: Kelayakan -->
+    <div class="footer-section" style="background:#007bff;padding:15px;border-radius:8px;">
+      <h3 style="margin-bottom:10px;font-size:18px;">SILA SEMAK KELAYAKAN ANDA</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;">
+        <ul class="kelayakan-list" style="flex:1;list-style:none;padding:0;margin:0;">
+          <li>KERAJAAN</li>
+          <li>SWASTA</li>
+          <li>KILANG</li>
+        </ul>
+        <ul class="kelayakan-list" style="flex:1;list-style:none;padding:0;margin:0;">
+          <li>PENCEN</li>
+          <li>PELAJAR</li>
+          <li>SKIM GRADUAN</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 2: Dokumen Diperlukan -->
+    <div class="footer-section" style="background:#007bff;padding:15px;border-radius:8px;">
+      <h3 style="margin-bottom:10px;font-size:18px;">DOKUMEN DIPERLUKAN</h3>
+
+      <div class="doc-row" style="display:flex;flex-wrap:wrap;gap:20px;">
+        <div class="doc-category" style="flex:1;min-width:200px;">
+          <h4 style="margin-bottom:8px;">KERAJAAN</h4>
+          <ul style="margin:0;padding-left:18px;">
+            <li>IC & LESEN</li>
+            <li>3 BULAN PAYSLIP</li>
+            <li>3 BULAN BANK STATEMENT</li>
+          </ul>
+        </div>
+
+        <div class="doc-category" style="flex:1;min-width:200px;">
+          <h4 style="margin-bottom:8px;">SWASTA</h4>
+          <ul style="margin:0;padding-left:18px;">
+            <li>IC & LESEN</li>
+            <li>6 BULAN PAYSLIP</li>
+            <li>6 BULAN BANK STATEMENT</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Perniagaan jatuh bawah -->
+      <div class="doc-row" style="display:flex;flex-wrap:wrap;gap:20px;margin-top:15px;">
+        <div class="doc-category" style="flex:1;min-width:200px;">
+          <h4 style="margin-bottom:8px;">PERNIAGAAN</h4>
+          <ul style="margin:0;padding-left:18px;">
+            <li>SSM</li>
+            <li>6 BULAN BANK STATEMENT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- Section 3: WhatsApp Button -->
-    <div class="contact-section">
-       <a href="https://wa.me/601133028399?text=Hi,%20I%20am%20interested%20in%20Proton%20vehicles.%20Please%20provide%20more%20information."
-           class="whatsapp-button" 
-           target="_blank">
-            <span class="whatsapp-icon">📱</span>
-            Hubungi Kami via WhatsApp
-        </a>
+    <div class="contact-section" style="text-align:center;">
+      <a href="https://wa.me/60189675443?text=Hi,%20saya%20berminat%20nak%20memiliki%20kereta%20Proton.%20Boleh%20Encik%20Khairul%20bantu%20saya%20hingga%20jadi%20kenyataan?"
+         class="whatsapp-button" 
+         target="_blank"
+         style="display:inline-block;padding:12px 20px;background:#25d366;color:#fff;text-decoration:none;font-weight:bold;border-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+        <span class="whatsapp-icon" style="margin-right:8px;">📱</span>
+        Hubungi Saya via WhatsApp
+      </a>
     </div>
 
     <!-- Section 4: Small Print -->
-    <div class="terms-text">
-        <p>*Terms and conditions apply.</p>
+    <div class="terms-text" style="text-align:center;font-size:13px;color:#555;">
+      <p style="margin:0;">*Terms and conditions apply.</p>
     </div>
+
+  </div>
 </div>
 </body>
-
 </html>
-
